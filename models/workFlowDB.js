@@ -1,6 +1,9 @@
+/*******************MODULES*******************/
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+/*********************************************/
 
+//#region Work Flow Schema
 const workFlowSchema = new Schema(
   {
     name: {
@@ -34,5 +37,6 @@ const workFlowSchema = new Schema(
     timestamps: true,
   }
 );
+//#endregion
 
 module.exports = mongoose.model("workFlow", workFlowSchema);

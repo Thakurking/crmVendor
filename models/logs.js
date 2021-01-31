@@ -1,6 +1,9 @@
+/******************MODULES******************/
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+/*******************************************/
 
+//#region Logs Schema For Work Flow
 const logsSchema = new Schema({
   workFlowName: {
     type: String,
@@ -26,5 +29,6 @@ const logsSchema = new Schema({
     },
   ],
 });
+//#endregion
 
 module.exports = mongoose.model("logs", logsSchema);

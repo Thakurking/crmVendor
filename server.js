@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
-/*******************************************/
+/********************************************/
 
 /********************DATABSE CONNECTION*************************/
 mongoose.connect("mongodb://localhost/crmDB", {

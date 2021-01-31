@@ -1,10 +1,15 @@
+/***********************MODULES***********************/
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
+/*****************************************************/
 
+/**********************DATABASE***********************/
 const workFlow = require("../models/workFlowDB");
 const Logs = require("../models/logs");
+/*****************************************************/
 
+//#region Add Work Flow
 router.post("/addWorkFlow", async (req, res) => {
   const isWorkExist = await workFlow.findOne({ name: req.body.name });
   if (isWorkExist) {
@@ -47,7 +52,9 @@ router.post("/addWorkFlow", async (req, res) => {
     console.log(saveWorkFlow);
   }
 });
+//#endregion
 
+//#region  Get Work Flow Status
 router.get("/getWorkFlowStatus", async (req, res) => {
   const workFlowName = req.query.workFlowName;
   const isWorkExist = await workFlow.findOne({ name: workFlowName });
@@ -77,5 +84,6 @@ router.get("/getWorkFlowStatus", async (req, res) => {
     return;
   }
 });
+//#endregion
 
 module.exports = router;
